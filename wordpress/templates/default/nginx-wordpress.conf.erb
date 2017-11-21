@@ -1,4 +1,5 @@
 fastcgi_cache_path <%= @web_root %>/cache levels=1:2 keys_zone=<%= @app_name %>:100m inactive=60m;
+fastcgi_cache_key "$scheme$request_method$host$request_uri";
 
 server {
   listen 80;
